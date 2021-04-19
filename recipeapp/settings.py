@@ -21,7 +21,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 
-SECRET_KEY = confi('SECRET_KEY')
+SECRET_KEY = config('SECRET_KEY')
 
 
 DEBUG = config('DEBUG', default=False, cast=bool)
@@ -43,7 +43,10 @@ INSTALLED_APPS = [
     # 3rd Party apps
 
     # Local Apps
+    'apps.profiles'
 ]
+
+AUTH_USER_MODEL = 'profiles.CustomUser' 
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
